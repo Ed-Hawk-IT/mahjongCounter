@@ -5,7 +5,7 @@ public class Driver {
         for(int i = 0; i < steps; i++){
             System.out.print("\033[2J\033[;H");
             //s.step();
-            //System.out.println(s);
+            System.out.println("s");
             Thread.sleep(300);
         }
         System.out.println("");

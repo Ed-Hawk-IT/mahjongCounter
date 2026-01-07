@@ -1,6 +1,6 @@
 #run mahjong counter
 driver_compile:
-	javac -d classes -sourcepath src Driver
+	javac -d classes Driver.java
 
 src_compile:
 	javac -d classes -sourcepath src src/*.java
@@ -10,11 +10,11 @@ run: src_compile driver_compile
 
 #run test
 compile_test: src_compile
-	javac -d classes -cp "./test/junit-1.8.1.jar:src"  ./Test.java
+	javac -d classes -cp "classes:junit-1.8.1.jar" ./MahjongTest.java
 
 test: compile_test
-	java -jar ./test/junit-1.8.1.jar -cp classes -c Test
+	java -jar ./junit-1.8.1.jar -cp classes -c MahjongTest
 
 # clean
 clean:
-	rm -rf classes output.txt
+	rm -rf classes
